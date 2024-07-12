@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Changeable Theme</title>
+</head>
+<body>
+    <div class="container ">
+        <h1>Nature Park</h1>
+        <div class="box">
+            <h2>Waterfalls</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vel nostrum possimus quaerat praesentium veniam incidunt quae, fugit eligendi placeat.</p>
+        </div> 
+        <div class="box">
+            <h2>Hills</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vel nostrum possimus quaerat praesentium veniam incidunt quae, fugit eligendi placeat.</p>
+        </div>         
+        <div class="box">
+            <h2>Snow Mountaines</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vel nostrum possimus quaerat praesentium veniam incidunt quae, fugit eligendi placeat.</p>
+        </div> 
+        <input type="checkbox" class="toggle">
+    </div>
+    <script>
+        let body = document.querySelector('body');
+        let toggleBtn = document.querySelector('.toggle');
+        toggleBtn.addEventListener('click', onClick);
+
+        function onClick(){
+            body.classList.toggle('dark');
+
+            if(document.documentElement.style.getPropertyValue('--toggle-left')==0){
+                document.documentElement.style.setProperty('--toggle-left', "30px");
+            }else if(document.documentElement.style.getPropertyValue('--toggle-left')=='30px'){
+                document.documentElement.style.setProperty('--toggle-left', 0);
+            }
+        }
+    </script>
+</body>
+</html>

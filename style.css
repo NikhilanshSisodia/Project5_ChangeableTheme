@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-text-color: #222;
+    --secondary-text-color: #444;
+    --card-background-color: #fff;
+    --background-color: #ddd;
+    --btn-background: #333;
+    --btn-color: #f2f2f2;
+    --default-margin: 20px;
+    --toggle-left: 0;
+}
+
+.dark{
+    --primary-text-color: #fff;
+    --secondary-text-color: #ddd;
+    --card-background-color: #333;
+    --background-color: #111;
+    --btn-background: #ddd;
+    --btn-color: #333;
+}
+
+.container{
+    min-height: 100vh;
+    padding: 40px;
+    background-color: var(--background-color);
+}
+
+.box{
+    padding: var(--default-margin);
+    background-color: var(--card-background-color);
+    margin-block: var(--default-margin);;
+    border-radius: var(--default-margin);;
+}
+
+.container h1{
+    text-align: center;
+    color: var(--primary-text-color);
+}
+
+.box h2{
+    margin-bottom: var(--default-margin);
+    color: var(--primary-text-color);
+}
+
+.box p{
+    color: var(--secondary-text-color);
+}
+
+.toggle{
+    display: flex;
+    width: 50px;
+    background-color: white;
+    border-radius: 50px;
+    height: 20px;   
+    position: relative;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.toggle::before{
+    content: "";
+    width: 100%;
+    background-color: var(--btn-background);
+    border-radius: 50px;
+    height: 20px;
+    transition: 0.4s ease-in-out;
+}
+
+.toggle::after{
+    content: "";
+    width: 20px;
+    background-color: var(--btn-color);
+    border-radius: 50px;
+    height: 20px;
+    position: absolute;
+    left: var(--toggle-left);
+    transition: 0.4s ease-in-out;
+}
